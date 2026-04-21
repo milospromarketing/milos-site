@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Milos Pro — Puertas automáticas, soldadura profesional, cercas metálicas e instalación de sistemas de seguridad en Miami. Instalación garantizada y atención directa." />
+<title>Milos Pro | Puertas Automáticas y Soldadura Profesional en Miami</title>
+
+<meta property="og:title" content="Milos Pro | Automated Gates & Welding — Miami" />
+<meta property="og:description" content="Diseñamos, fabricamos e instalamos puertas automáticas, cercas y estructuras metálicas. Trabajo directo con el dueño, garantía por escrito." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" type="image/jpeg" href="images/logo-milos-pro.jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --navy: #0c2240;
+    --teal: #008080;
+    --teal-dark: #006a6a;
+    --orange: #cc5500;
+    --ivory: #f4f3f1;
+    --white: #ffffff;
+    --gray-100: #f7f7f6;
+    --gray-200: #e8e7e4;
+    --gray-400: #9a9a97;
+    --gray-600: #5a5a57;
+    --gray-800: #2a2a28;
+    --font-display: 'Montserrat', system-ui, sans-serif;
+    --font-body: 'Roboto', system-ui, sans-serif;
+    --container: 1200px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 2px 8px rgba(12, 34, 64, 0.06);
+    --shadow-md: 0 8px 24px rgba(12, 34, 64, 0.10);
+    --shadow-lg: 0 20px 60px rgba(12, 34, 64, 0.15);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body {
+    font-family: var(--font-body);
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; cursor: pointer; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+  section { padding: 96px 0; }
+
+  [data-lang="en"] { display: none; }
+  html[lang="en"] [data-lang="es"] { display: none; }
+  html[lang="en"] [data-lang="en"] { display: inline; }
+
+  /* Language banner */
+  .lang-banner {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    display: none;
+  }
+  .lang-banner.active { display: block; }
+  .lang-banner button {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 600;
+    margin-left: 4px;
+    font-size: 13px;
+  }
+  .lang-banner-close {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .site-header.scrolled {
+    border-bottom-color: var(--gray-200);
+    box-shadow: var(--shadow-sm);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+    gap: 16px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+  .nav-brand-logo { width: 44px; height: 44px; object-fit: contain; }
+  .nav-brand-text small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links > li > a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-800);
+    transition: color var(--transition);
+    position: relative;
+  }
+  .nav-links > li > a:hover { color: var(--teal); }
+  .nav-links > li > a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--teal);
+    transition: width var(--transition);
+  }
+  .nav-links > li > a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .nav-cta:hover {
+    background: var(--teal);
+    transform: translateY(-1px);
+  }
+  .nav-cta::after { display: none !important; }
+
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    font-family: var(--font-display);
+  }
+  .lang-switcher button {
+    padding: 4px 8px;
+    border-radius: 3px;
+    color: var(--gray-600);
+    transition: all var(--transition);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-display);
+  }
+  .lang-switcher button.active {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .lang-switcher button:not(.active):hover { color: var(--navy); }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+  }
+  .mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(12,34,64,0.03) 0%, rgba(0,128,128,0.05) 100%), var(--ivory);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,128,128,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(204,85,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--teal);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: var(--orange);
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .hero h1 .highlight { color: var(--teal); }
+  .hero-subtitle {
+    font-size: 18px;
+    color: var(--gray-600);
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    letter-spacing: 0.01em;
+    font-family: var(--font-display);
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(204, 85, 0, 0.25);
+  }
+  .btn-primary:hover {
+    background: #b84c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(204, 85, 0, 0.35);
+  }
+  .btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--navy);
+  }
+  .btn-secondary:hover {
+    background: var(--navy);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .btn svg { width: 18px; height: 18px; }
+
+  .hero-trust { display: flex; gap: 40px; flex-wrap: wrap; }
+  .trust-item strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .trust-item span {
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-top: 6px;
+    display: block;
+  }
+
+  .hero-visual { position: relative; }
+  .hero-image-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-image-accent {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 45%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+    border: 6px solid var(--white);
+  }
+  .hero-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--white);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .hero-badge-dot {
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    animation: pulse 2s infinite;
+  }
+
+  /* Sections */
+  .section-header { text-align: center; max-width: 680px; margin: 0 auto 64px; }
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+  .section-header h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 16px; }
+  .section-header p { font-size: 17px; color: var(--gray-600); }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 2;
+  }
+  .service-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    background: var(--gray-100);
+  }
+  .service-card-content {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 128, 128, 0.08);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--teal);
+    transition: all var(--transition);
+  }
+  .service-card:hover .service-icon {
+    background: var(--teal);
+    color: var(--white);
+  }
+  .service-icon svg { width: 22px; height: 22px; }
+  .service-card h3 { font-size: 20px; margin-bottom: 12px; }
+  .service-card p { color: var(--gray-600); font-size: 15px; margin-bottom: 20px; flex: 1; }
+
+  /* === Service link REFINADO === */
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    margin-top: auto;
+    padding-top: 4px;
+    position: relative;
+    transition: color var(--transition);
+  }
+  .service-link::after {
+    content: '→';
+    display: inline-block;
+    font-size: 14px;
+    transition: transform var(--transition);
+  }
+  .service-link:hover {
+    color: var(--navy);
+  }
+  .service-link:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* Process */
+  .process {
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .process::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,128,128,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .process .section-header h2 { color: var(--white); }
+  .process .section-header p { color: rgba(255,255,255,0.7); }
+  .process .section-eyebrow { color: var(--orange); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .process-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .process-image img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+  .steps-stack { display: flex; flex-direction: column; gap: 32px; }
+  .step { display: flex; gap: 24px; align-items: flex-start; }
+  .step-number {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 60px;
+  }
+  .step-content h3 { color: var(--white); font-size: 20px; margin-bottom: 8px; }
+  .step-content p { color: rgba(255,255,255,0.7); font-size: 15px; }
+
+  /* ============================================
+     NUEVA SECCIÓN: Instagram (reemplaza proyectos)
+     ============================================ */
+  .instagram-section {
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+  }
+  .instagram-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(204,85,0,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .instagram-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .instagram-feed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .ig-tile {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .ig-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+  }
+  .ig-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .ig-tile:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.7);
+  }
+  .ig-tile-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(204,85,0,0.85), rgba(0,128,128,0.85));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--white);
+  }
+  .ig-tile:hover .ig-tile-overlay { opacity: 1; }
+  .ig-tile-overlay svg { width: 36px; height: 36px; }
+
+  .instagram-content h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .instagram-content .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .instagram-content .section-eyebrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  .instagram-content p {
+    color: var(--gray-600);
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+  .instagram-handle {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 32px;
+    display: block;
+  }
+  .instagram-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 20px 24px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+  }
+  .ig-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .ig-stat span {
+    font-size: 12px;
+    color: var(--gray-600);
+    margin-top: 4px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .btn-instagram {
+    background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(253, 29, 29, 0.25);
+  }
+  .btn-instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(253, 29, 29, 0.35);
+  }
+
+  /* Testimonials */
+  .testimonials { background: var(--white); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .testimonial {
+    background: var(--gray-100);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+  }
+  .testimonial-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 16px;
+    color: var(--orange);
+  }
+  .testimonial-stars svg { width: 18px; height: 18px; }
+  .testimonial blockquote {
+    font-size: 16px;
+    color: var(--gray-800);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .testimonial-author strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--navy);
+  }
+  .testimonial-author span { font-size: 13px; color: var(--gray-600); }
+
+  /* FAQ */
+  .faq-section { background: var(--ivory); }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-200);
+    background: transparent;
+  }
+  .faq-question {
+    width: 100%;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: color var(--transition);
+  }
+  .faq-question:hover { color: var(--teal); }
+  .faq-question-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .faq-question-icon::before,
+  .faq-question-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background: var(--teal);
+    transform: translate(-50%, -50%);
+    transition: transform var(--transition);
+  }
+  .faq-question-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .faq-item.open .faq-question-icon::after { transform: translate(-50%, -50%) rotate(0); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    color: var(--gray-600);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 24px; }
+
+  /* CTA final */
+  .cta-final {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(135deg, rgba(12,34,64,0.92) 0%, rgba(0,128,128,0.82) 100%),
+      url('images/IMG_9645.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 120px 0;
+  }
+  .cta-final h2 { color: var(--white); font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px; }
+  .cta-final p {
+    font-size: 19px;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  .cta-final-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-final .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+  }
+  .cta-final .btn-secondary:hover {
+    background: var(--white);
+    color: var(--navy);
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 64px 0 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .footer-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  .footer-brand-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--white);
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  .footer-brand-text small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .footer-col p { font-size: 14px; line-height: 1.7; }
+  .footer-col h4 {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    transition: color var(--transition);
+  }
+  .footer-col a:hover { color: var(--teal); }
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  .footer-contact-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--teal);
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  /* WhatsApp float */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: all var(--transition);
+    animation: floatPulse 3s ease-in-out infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+  }
+  .whatsapp-float svg { width: 32px; height: 32px; color: var(--white); }
+  .whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    animation: ripple 2s ease-out infinite;
+    z-index: -1;
+  }
+  .whatsapp-tooltip {
+    position: absolute;
+    right: 74px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+  .whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid var(--navy);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+  .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2); }
+    50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.1); }
+  }
+  @keyframes floatPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  @keyframes ripple {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    section { padding: 64px 0; }
+    .hero { padding: 64px 0; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-image-accent { display: none; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .process-grid { grid-template-columns: 1fr; gap: 48px; }
+    .process-image img { aspect-ratio: 16/10; }
+    .instagram-grid { grid-template-columns: 1fr; gap: 40px; }
+    .instagram-content { text-align: center; }
+    .instagram-content .section-eyebrow { justify-content: center; }
+    .instagram-stats { justify-content: center; }
+  }
+  @media (max-width: 700px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      align-items: stretch;
+      padding: 24px;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-md);
+      gap: 16px;
+    }
+    .nav-links.mobile-open { display: flex; }
+    .mobile-toggle { display: flex; }
+    .nav-brand-text { display: none; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-trust { gap: 24px; }
+    .whatsapp-float { width: 56px; height: 56px; bottom: 20px; right: 20px; }
+    .whatsapp-tooltip { display: none; }
+    .step-number { font-size: 32px; min-width: 48px; }
+    .instagram-stats { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Language banner -->
+<div class="lang-banner" id="langBanner">
+  <span data-lang="es">¿Prefieres inglés?</span>
+  <span data-lang="en">Would you prefer Spanish?</span>
+  <button id="langBannerSwitch">
+    <span data-lang="es">Switch to English</span>
+    <span data-lang="en">Cambiar a Español</span>
+  </button>
+  <a class="lang-banner-close" id="langBannerClose" aria-label="Close">×</a>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="header">
+  <nav class="nav container">
+    <a class="nav-brand" data-scroll-to="top">
+      <img src="images/logo-milos-pro.jpeg" alt="Milos Pro" class="nav-brand-logo" />
+      <div class="nav-brand-text">
+        MILOS PRO
+        <small>WELDING &amp; AUTOMATED GATES</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a data-scroll-to="servicios"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a></li>
+      <li><a data-scroll-to="proceso"><span data-lang="es">Proceso</span><span data-lang="en">Process</span></a></li>
+      <li><a data-scroll-to="instagram">Instagram</a></li>
+      <li><a data-scroll-to="testimonios"><span data-lang="es">Testimonios</span><span data-lang="en">Reviews</span></a></li>
+      <li><a data-scroll-to="faq">FAQ</a></li>
+      <li>
+        <div class="lang-switcher">
+          <button data-set-lang="es" id="langBtnEs">ES</button>
+          <button data-set-lang="en" id="langBtnEn">EN</button>
+        </div>
+      </li>
+      <li>
+        <a class="nav-cta" data-scroll-to="contacto">
+          <span data-lang="es">Cotizar ahora</span>
+          <span data-lang="en">Get a quote</span>
+        </a>
+      </li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span data-lang="es">Soldadura profesional en Miami</span>
+        <span data-lang="en">Professional welding in Miami</span>
+      </div>
+      <h1>
+        <span data-lang="es">Puertas automáticas y soldadura con <span class="highlight">precisión</span> y garantía.</span>
+        <span data-lang="en">Automated gates and welding with <span class="highlight">precision</span> and guarantee.</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span data-lang="es">Diseñamos, fabricamos e instalamos puertas, cercas y estructuras metálicas para residencias y empresas. Trabajo directo con el dueño, tiempos que se cumplen y garantía por escrito.</span>
+        <span data-lang="en">We design, build, and install gates, fences, and metal structures for homes and businesses. Direct communication with the owner, deadlines we meet, and written warranty.</span>
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary wa-link"
+           data-wa-es="Hola Milos Pro, vi su sitio web y me interesa cotizar un proyecto."
+           data-wa-en="Hi Milos Pro, I saw your website and I'd like to request a quote for a project.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-lang="es">Escríbenos por WhatsApp</span>
+          <span data-lang="en">Text us on WhatsApp</span>
+        </a>
+        <a class="btn btn-secondary" data-scroll-to="servicios">
+          <span data-lang="es">Ver servicios</span>
+          <span data-lang="en">See services</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <strong>+10</strong>
+          <span data-lang="es">años de experiencia</span>
+          <span data-lang="en">years of experience</span>
+        </div>
+        <div class="trust-item">
+          <strong>+500</strong>
+          <span data-lang="es">proyectos entregados</span>
+          <span data-lang="en">projects delivered</span>
+        </div>
+        <div class="trust-item">
+          <strong>100%</strong>
+          <span data-lang="es">garantía por escrito</span>
+          <span data-lang="en">written warranty</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-image-main" src="images/IMG_9637.webp" alt="Portón automático premium en residencia de Miami" />
+      <img class="hero-image-accent" src="images/IMG_9639.webp" alt="Técnico de Milos Pro instalando motor de portón" />
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-lang="es">Disponible hoy</span>
+        <span data-lang="en">Available today</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">
+        <span data-lang="es">Nuestros servicios</span>
+        <span data-lang="en">Our services</span>
+      </span>
+      <h2>
+        <span data-lang="es">Todo lo que necesitas en metal y automatización, en un solo lugar.</span>
+        <span data-lang="en">Everything you need in metal and automation, in one place.</span>
+      </h2>
+      <p>
+        <span data-lang="es">De una reja sencilla a un sistema completo de acceso automatizado. Cotización sin compromiso.</span>
+        <span data-lang="en">From a simple fence to a full automated access system. Free quote, no obligation.</span>
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <img class="service-image" src="images/IMG_9637.webp" alt="Automated gate" loading="lazy" />
+        <div class="service-card-content">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+          </div>
+          <h3><span data-lang="es">Puertas automáticas</span><span data-lang="en">Automated gates</span></h3>
+          <p>
+            <span data-lang="es">Portones corredizos, abatibles y pivotantes con motor. Control remoto, app móvil e integración con seguridad.</span>
+            <span data-lang="en">Sliding, swing, and pivot motorized gates. Remote control, mobile app, and security integration.</span>
+          </p>
+          <a class="service-link wa-link"
+             data-wa-es="Hola Milos Pro, me interesa cotizar una puerta automática."
+             data-wa-en="Hi Milos Pro, I'd like a quote for an automated gate.">
+            <span data-lang="es">Cotizar</span>
+            <span data-lang="en">Request quote</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img class="service-image" src="images/IMG_9640.webp" alt="Metal railings" loading="lazy" />
+        <div class="service-card-content">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l3-3 3 3v13M9 21V8l3-3 3 3v13M15 21V8l3-3 3 3v13M3 13h18M3 17h18"/></svg>
+          </div>
+          <h3><span data-lang="es">Cercas y rejas metálicas</span><span data-lang="en">Metal fences &amp; railings</span></h3>
+          <p>
+            <span data-lang="es">Perímetros de seguridad a medida. Diseños modernos o clásicos, con tratamiento anticorrosivo y acabado premium.</span>
+            <span data-lang="en">Custom security perimeters. Modern or classic designs, anti-corrosion treatment, premium finish.</span>
+          </p>
+          <a class="service-link wa-link"
+             data-wa-es="Hola Milos Pro, me interesa cotizar cercas o rejas metálicas."
+             data-wa-en="Hi Milos Pro, I'd like a quote for metal fences or railings.">
+            <span data-lang="es">Cotizar</span>
+            <span data-lang="en">Request quote</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img class="service-image" src="images/IMG_9641.webp" alt="Custom spiral staircase" loading="lazy" />
+        <div class="service-card-content">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3><span data-lang="es">Soldadura a medida</span><span data-lang="en">Custom welding</span></h3>
+          <p>
+            <span data-lang="es">Estructuras, escaleras de caracol, barandales y piezas personalizadas. Soldadura MIG, TIG y eléctrica por técnicos certificados.</span>
+            <span data-lang="en">Structures, spiral staircases, railings, and custom pieces. MIG, TIG, and stick welding by certified technicians.</span>
+          </p>
+          <a class="service-link wa-link"
+             data-wa-es="Hola Milos Pro, necesito un trabajo de soldadura a medida."
+             data-wa-en="Hi Milos Pro, I need a custom welding job.">
+            <span data-lang="es">Cotizar</span>
+            <span data-lang="en">Request quote</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img class="service-image" src="images/IMG_9639.webp" alt="Gate maintenance" loading="lazy" />
+        <div class="service-card-content">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3><span data-lang="es">Mantenimiento y reparación</span><span data-lang="en">Maintenance &amp; repair</span></h3>
+          <p>
+            <span data-lang="es">Servicio técnico para portones eléctricos, motores, bisagras y estructuras. Respuesta rápida y diagnóstico honesto.</span>
+            <span data-lang="en">Technical service for electric gates, motors, hinges, and structures. Fast response and honest diagnosis.</span>
+          </p>
+          <a class="service-link wa-link"
+             data-wa-es="Hola Milos Pro, necesito servicio de mantenimiento o reparación."
+             data-wa-en="Hi Milos Pro, I need maintenance or repair service.">
+            <span data-lang="es">Solicitar</span>
+            <span data-lang="en">Request service</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img class="service-image" src="images/IMG_9638.webp" alt="Intercom and access control" loading="lazy" />
+        <div class="service-card-content">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3><span data-lang="es">Intercomunicadores y seguridad</span><span data-lang="en">Intercoms &amp; security</span></h3>
+          <p>
+            <span data-lang="es">Instalación de videoporteros, sistemas de control de acceso, cerraduras inteligentes y cámaras integradas al portón.</span>
+            <span data-lang="en">Video doorbells, access control systems, smart locks, and cameras integrated with your gate.</span>
+          </p>
+          <a class="service-link wa-link"
+             data-wa-es="Hola Milos Pro, me interesan los intercomunicadores y sistemas de seguridad."
+             data-wa-en="Hi Milos Pro, I'm interested in intercoms and security systems.">
+            <span data-lang="es">Cotizar</span>
+            <span data-lang="en">Request quote</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="proceso" class="process">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">
+        <span data-lang="es">Así trabajamos</span>
+        <span data-lang="en">How we work</span>
+      </span>
+      <h2>
+        <span data-lang="es">Un proceso claro, sin sorpresas.</span>
+        <span data-lang="en">A clear process. No surprises.</span>
+      </h2>
+      <p>
+        <span data-lang="es">De la primera llamada a la entrega final, sabes exactamente qué esperar en cada paso.</span>
+        <span data-lang="en">From first contact to final delivery, you know exactly what to expect at each step.</span>
+      </p>
+    </div>
+    <div class="process-grid">
+      <div class="process-image reveal">
+        <img src="images/IMG_9647.webp" alt="Técnico Milos Pro con uniforme de marca trabajando en taller" loading="lazy" />
+      </div>
+      <div class="steps-stack">
+        <div class="step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3><span data-lang="es">Conversación inicial</span><span data-lang="en">First conversation</span></h3>
+            <p>
+              <span data-lang="es">Nos escribes por WhatsApp con tu idea. Respondemos en minutos con preguntas clave y rango de inversión estimado.</span>
+              <span data-lang="en">You text us on WhatsApp with your idea. We reply in minutes with key questions and an estimated budget range.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3><span data-lang="es">Visita técnica</span><span data-lang="en">On-site visit</span></h3>
+            <p>
+              <span data-lang="es">Vamos al sitio, medimos, revisamos condiciones y te proponemos opciones con materiales, tiempos y precio cerrado.</span>
+              <span data-lang="en">We visit the site, measure, review conditions, and propose options with materials, timeline, and a fixed price.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3><span data-lang="es">Fabricación</span><span data-lang="en">Fabrication</span></h3>
+            <p>
+              <span data-lang="es">Trabajamos en taller con materiales certificados. Te enviamos fotos del avance. Sin retrasos, sin excusas.</span>
+              <span data-lang="en">We work in our shop with certified materials. We send you progress photos. No delays, no excuses.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3><span data-lang="es">Instalación y garantía</span><span data-lang="en">Installation &amp; warranty</span></h3>
+            <p>
+              <span data-lang="es">Instalamos, probamos, te entregamos con manual de uso y garantía por escrito. Y seguimos disponibles después.</span>
+              <span data-lang="en">We install, test, and hand over with a user manual and written warranty. And we stay available afterward.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram section (reemplaza Projects) -->
+<section id="instagram" class="instagram-section">
+  <div class="container">
+    <div class="instagram-grid">
+      <div class="instagram-feed reveal">
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9647.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9648.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9649.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9636.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9650.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="ig-tile">
+          <img src="images/IMG_9651.webp" alt="Milos Pro work" loading="lazy" />
+          <div class="ig-tile-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram-content reveal">
+        <span class="section-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          <span data-lang="es">Síguenos en Instagram</span>
+          <span data-lang="en">Follow us on Instagram</span>
+        </span>
+        <h2>
+          <span data-lang="es">Míranos en acción, proyecto a proyecto.</span>
+          <span data-lang="en">See us in action, project by project.</span>
+        </h2>
+        <p>
+          <span data-lang="es">Publicamos trabajos reales cada semana: portones instalados, soldadura en taller, proyectos terminados y detrás de cámaras. La mejor manera de conocer nuestra calidad antes de contratarnos.</span>
+          <span data-lang="en">We post real work every week: installed gates, welding in the shop, finished projects, and behind-the-scenes. The best way to see our quality before hiring us.</span>
+        </p>
+        <span class="instagram-handle">@milospro_</span>
+        <a href="https://instagram.com/milospro_" target="_blank" rel="noopener" class="btn btn-instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          <span data-lang="es">Ver perfil completo</span>
+          <span data-lang="en">See full profile</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonios" class="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">
+        <span data-lang="es">Lo que dicen nuestros clientes</span>
+        <span data-lang="en">What our clients say</span>
+      </span>
+      <h2>
+        <span data-lang="es">Confianza que se construye proyecto a proyecto.</span>
+        <span data-lang="en">Trust built one project at a time.</span>
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote>
+          <span data-lang="es">Instalaron el portón automático de mi casa en tres días, exactamente como habían prometido. El acabado es impecable y llevo más de un año sin un solo problema. Recomendados.</span>
+          <span data-lang="en">They installed my home's automated gate in three days, exactly as promised. The finish is flawless and I've had zero issues in over a year. Highly recommended.</span>
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CR</div>
+          <div>
+            <strong>Carlos Ramírez</strong>
+            <span data-lang="es">Residencia privada · Miami</span>
+            <span data-lang="en">Private residence · Miami</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote>
+          <span data-lang="es">Nos hicieron una escalera exterior de caracol para el segundo piso. La cotización fue clara, no hubo costos extra y el trabajo quedó muy bien hecho. Se nota que saben lo que hacen.</span>
+          <span data-lang="en">They built us an exterior spiral staircase for the second floor. The quote was clear, no surprise costs, and the work came out really well. You can tell they know their craft.</span>
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LG</div>
+          <div>
+            <strong>Laura González</strong>
+            <span data-lang="es">Propietaria · Miami</span>
+            <span data-lang="en">Homeowner · Miami</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote>
+          <span data-lang="es">Se me trabó el portón un sábado por la noche. Les escribí por WhatsApp y al día siguiente estaban aquí resolviendo. Ese nivel de servicio ya casi no se ve.</span>
+          <span data-lang="en">My gate got stuck on a Saturday night. I texted them on WhatsApp and they were here the next day fixing it. That level of service is hard to find these days.</span>
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div>
+            <strong>Andrés Martínez</strong>
+            <span data-lang="es">Propietario · Miami</span>
+            <span data-lang="en">Homeowner · Miami</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">
+        <span data-lang="es">Preguntas frecuentes</span>
+        <span data-lang="en">Frequently asked</span>
+      </span>
+      <h2>
+        <span data-lang="es">Lo que otros clientes preguntan antes de empezar.</span>
+        <span data-lang="en">What other clients ask before getting started.</span>
+      </h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿Cuánto cuesta una puerta automática?</span>
+            <span data-lang="en">How much does an automated gate cost?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Depende del tamaño, material y tipo de motor. Los proyectos residenciales suelen arrancar desde cierto rango y escalan según acabados y automatización. Te damos un precio cerrado después de la visita técnica — sin estimaciones infladas por WhatsApp.</span>
+            <span data-lang="en">It depends on size, material, and motor type. Residential projects typically start at a base range and scale up based on finishes and automation. We give you a fixed price after the on-site visit — no inflated estimates over text.</span>
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿En qué zonas trabajan?</span>
+            <span data-lang="en">What areas do you serve?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Cubrimos Miami y área metropolitana (Miami-Dade y Broward). Para proyectos grandes podemos desplazarnos más lejos; consúltanos tu ubicación por WhatsApp y te confirmamos en el momento.</span>
+            <span data-lang="en">We serve Miami and the metro area (Miami-Dade and Broward). For larger projects we can travel farther — just send us your location via WhatsApp and we'll confirm right away.</span>
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿Cuánto tardan en entregar un proyecto?</span>
+            <span data-lang="en">How long does a project take?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Una puerta estándar se entrega en 7 a 15 días hábiles desde el anticipo. Proyectos más complejos o a medida pueden tomar más, pero siempre te damos una fecha comprometida por escrito. No prometemos lo que no podemos cumplir.</span>
+            <span data-lang="en">A standard gate is delivered in 7 to 15 business days from deposit. Custom or more complex projects may take longer, but we always commit to a delivery date in writing. We don't promise what we can't deliver.</span>
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿Qué garantía ofrecen?</span>
+            <span data-lang="en">What warranty do you offer?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Todos nuestros trabajos incluyen garantía por escrito: estructura, soldadura y motor. El plazo depende del servicio, pero se firma al momento de la entrega. También damos soporte técnico después de vencida la garantía.</span>
+            <span data-lang="en">All our work includes a written warranty: structure, welding, and motor. The term depends on the service and it's signed upon delivery. We also provide technical support after the warranty period.</span>
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿Puedo ver trabajos anteriores antes de contratar?</span>
+            <span data-lang="en">Can I see previous work before hiring?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Por supuesto. Puedes ver nuestro Instagram @milospro_ donde publicamos proyectos cada semana. También te compartimos portafolio por WhatsApp con fotos y videos de trabajos similares al tuyo.</span>
+            <span data-lang="en">Absolutely. Check our Instagram @milospro_ where we post projects every week. We also share a portfolio via WhatsApp with photos and videos of similar work.</span>
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>
+            <span data-lang="es">¿Qué formas de pago aceptan?</span>
+            <span data-lang="en">What payment methods do you accept?</span>
+          </span>
+          <span class="faq-question-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="es">Transferencia, efectivo y en algunos proyectos tarjeta. Trabajamos con un anticipo al iniciar y el saldo contra entrega. Todo queda documentado en un contrato simple y claro.</span>
+            <span data-lang="en">Bank transfer, cash, and card for select projects. We work with a deposit at start and balance upon delivery. Everything is documented in a simple, clear contract.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section id="contacto" class="cta-final">
+  <div class="container">
+    <div class="reveal">
+      <h2>
+        <span data-lang="es">¿Listo para empezar tu proyecto?</span>
+        <span data-lang="en">Ready to start your project?</span>
+      </h2>
+      <p>
+        <span data-lang="es">Escríbenos por WhatsApp y respondemos en minutos. Sin formularios largos, sin vendedores insistentes.</span>
+        <span data-lang="en">Text us on WhatsApp and we'll reply in minutes. No long forms, no pushy sales.</span>
+      </p>
+      <div class="cta-final-buttons">
+        <a class="btn btn-primary wa-link"
+           data-wa-es="Hola Milos Pro, quiero cotizar un proyecto."
+           data-wa-en="Hi Milos Pro, I'd like to request a quote for a project.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-lang="es">Hablar por WhatsApp</span>
+          <span data-lang="en">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:+13054644730" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span data-lang="es">Llamar: (305) 464-4730</span>
+          <span data-lang="en">Call: (305) 464-4730</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer con logo blanco -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="images/logo-milos-pro-white.png" alt="Milos Pro logo" />
+          <div class="footer-brand-text">
+            MILOS PRO
+            <small>WELDING &amp; AUTOMATED GATES</small>
+          </div>
+        </div>
+        <p>
+          <span data-lang="es">Soldadura profesional y puertas automáticas para residencias y empresas en Miami. Calidad técnica, palabra cumplida.</span>
+          <span data-lang="en">Professional welding and automated gates for homes and businesses in Miami. Technical quality, commitments kept.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="es">Servicios</span><span data-lang="en">Services</span></h4>
+        <ul>
+          <li><a data-scroll-to="servicios"><span data-lang="es">Puertas automáticas</span><span data-lang="en">Automated gates</span></a></li>
+          <li><a data-scroll-to="servicios"><span data-lang="es">Cercas y rejas</span><span data-lang="en">Fences &amp; railings</span></a></li>
+          <li><a data-scroll-to="servicios"><span data-lang="es">Soldadura a medida</span><span data-lang="en">Custom welding</span></a></li>
+          <li><a data-scroll-to="servicios"><span data-lang="es">Mantenimiento</span><span data-lang="en">Maintenance</span></a></li>
+          <li><a data-scroll-to="servicios"><span data-lang="es">Seguridad e intercomunicación</span><span data-lang="en">Security &amp; intercoms</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="es">Empresa</span><span data-lang="en">Company</span></h4>
+        <ul>
+          <li><a data-scroll-to="proceso"><span data-lang="es">Proceso</span><span data-lang="en">Process</span></a></li>
+          <li><a data-scroll-to="instagram">Instagram</a></li>
+          <li><a data-scroll-to="testimonios"><span data-lang="es">Testimonios</span><span data-lang="en">Reviews</span></a></li>
+          <li><a data-scroll-to="faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <a href="tel:+13054644730">(305) 464-4730</a><br>
+            <a href="tel:+17866945349">(786) 694-5349</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          <a href="https://instagram.com/milospro_" target="_blank" rel="noopener">@milospro_</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <a href="https://milosprogates.com" target="_blank" rel="noopener">milosprogates.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Miami, FL</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>
+        <span data-lang="es">© 2026 Milos Pro. Todos los derechos reservados.</span>
+        <span data-lang="en">© 2026 Milos Pro. All rights reserved.</span>
+      </span>
+      <span>Welding &amp; Automated Gates</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/13054644730"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-float wa-link"
+   data-wa-es="Hola Milos Pro, me gustaría recibir información."
+   data-wa-en="Hi Milos Pro, I'd like to get some information."
+   aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="whatsapp-tooltip">
+    <span data-lang="es">¿Tienes un proyecto? Escríbenos</span>
+    <span data-lang="en">Got a project? Text us</span>
+  </span>
+</a>
+
+<script>
+  const WHATSAPP_NUMBER = '13054644730';
+  const STORAGE_KEY = 'milospro_lang_preference';
+  const html = document.documentElement;
+  const langBtnEs = document.getElementById('langBtnEs');
+  const langBtnEn = document.getElementById('langBtnEn');
+  const langBanner = document.getElementById('langBanner');
+  const langBannerSwitch = document.getElementById('langBannerSwitch');
+  const langBannerClose = document.getElementById('langBannerClose');
+
+  function detectBrowserLang() {
+    const browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+    return browserLang.startsWith('en') ? 'en' : 'es';
+  }
+
+  function setLanguage(lang, saveToStorage = true) {
+    html.setAttribute('lang', lang);
+    langBtnEs.classList.toggle('active', lang === 'es');
+    langBtnEn.classList.toggle('active', lang === 'en');
+    if (saveToStorage) {
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch(e) {}
+    }
+    document.title = lang === 'en'
+      ? 'Milos Pro | Automated Gates & Professional Welding in Miami'
+      : 'Milos Pro | Puertas Automáticas y Soldadura Profesional en Miami';
+  }
+
+  (function initLanguage() {
+    let savedLang = null;
+    try { savedLang = localStorage.getItem(STORAGE_KEY); } catch(e) {}
+    const browserLang = detectBrowserLang();
+    const hasBeenHere = savedLang !== null;
+    const initialLang = savedLang || browserLang;
+    setLanguage(initialLang, false);
+    if (!hasBeenHere && browserLang === 'en' && initialLang === 'es') {
+      langBanner.classList.add('active');
+    } else if (!hasBeenHere && browserLang === 'es' && initialLang === 'en') {
+      langBanner.classList.add('active');
+    }
+  })();
+
+  langBtnEs.addEventListener('click', () => {
+    setLanguage('es');
+    langBanner.classList.remove('active');
+  });
+  langBtnEn.addEventListener('click', () => {
+    setLanguage('en');
+    langBanner.classList.remove('active');
+  });
+  langBannerSwitch.addEventListener('click', () => {
+    const current = html.getAttribute('lang');
+    setLanguage(current === 'es' ? 'en' : 'es');
+    langBanner.classList.remove('active');
+  });
+  langBannerClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    langBanner.classList.remove('active');
+  });
+
+  document.querySelectorAll('.wa-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const currentLang = html.getAttribute('lang');
+      const message = currentLang === 'en'
+        ? (this.dataset.waEn || "Hi Milos Pro, I'd like some information.")
+        : (this.dataset.waEs || 'Hola Milos Pro, me gustaría recibir información.');
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  });
+
+  document.querySelectorAll('[data-scroll-to]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.dataset.scrollTo;
+      if (targetId === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      document.getElementById('navLinks').classList.remove('mobile-open');
+    });
+  });
+
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+  mobileToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-open');
+  });
+</script>
+
+</body>
+</html>
