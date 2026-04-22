@@ -2600,14 +2600,27 @@ fbq('track', 'PageView');
       };
 
       // HUBSPOT INTEGRATION POINT
-      // Cuando se conecte HubSpot, aquí va el envío real:
-      // hbspt.forms.submit({...formData}) o fetch a la API
-      console.log('Lead capturado:', formData);
+        fetch('https://api.hsforms.com/submissions/v3/integration/submit/245985891/1f5aa0c6-03ab-467f-bf36-ccf74484ab49', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: [
+              { name: 'firstname', value: formData.firstName },
+              { name: 'lastname', value: formData.lastName },
+              { name: 'email', value: formData.email },
+              { name: 'phone', value: formData.phone },
+              { name: 'tipo_de_servicio', value: formData.service },
+              { name: 'ciudad_zona', value: formData.zone || formData.location || '' },
+              { name: 'rango_de_inversion', value: formData.budget || '' },
+              { name: 'message', value: formData.message || '' }
+            ],
+            context: { pageUri: window.location.href, pageName: document.title }
+          })
+        }).catch(err => console.error('HubSpot error:', err));
 
-      // TRACKING POINT
-      // Cuando esté instalado el Pixel y GA4:
-      // fbq('track', 'Lead', { content_name: formData.service });
-      // gtag('event', 'generate_lead', { service: formData.service });
+        // TRACKING POINT — se activa cuando instales Pixel y GA4
+        // fbq('track', 'Lead', { content_name: formData.service });
+        // gtag('event', 'generate_lead', { service: formData.service });
 
       // Mostrar success state
       formCard.classList.add('success-state');
