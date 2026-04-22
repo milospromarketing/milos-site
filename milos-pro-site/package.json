@@ -1,0 +1,14 @@
+{
+  "name": "milos-pro-site",
+  "version": "1.0.0",
+  "description": "Milos Pro — Puertas automáticas, soldadura profesional, cercas metálicas e instalación de sistemas de seguridad en Miami",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  }
+}
