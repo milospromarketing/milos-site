@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Propuesta visual — Distribución de fotos Milos Pro v7</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Roboto', system-ui, sans-serif;
+    background: #f0f0ee;
+    color: #2a2a28;
+    line-height: 1.5;
+    padding: 32px 16px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0c2240, #008080);
+    color: white;
+    padding: 36px 32px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .header p {
+    opacity: 0.85;
+    font-size: 14px;
+    max-width: 700px;
+  }
+  .header .legend {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+  .legend-item .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Section card */
+  .section-card {
+    background: white;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .section-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #008080;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0c2240;
+  }
+  .section-desc {
+    font-size: 13px;
+    color: #5a5a57;
+    margin-bottom: 22px;
+  }
+
+  /* Photo slot */
+  .photo-slots {
+    display: grid;
+    gap: 14px;
+  }
+  .photo-slot {
+    background: #fafaf8;
+    border: 1.5px solid #e0e0dd;
+    border-radius: 8px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .photo-slot-img {
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #d8d8d4;
+  }
+  .photo-slot-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-slot-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0c2240;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tag.new { background: #d4ff5b; color: #0c2240; }
+  .tag.keep { background: #c0c0bd; color: #2a2a28; }
+  .tag.move { background: #5bb8ff; color: white; }
+  .photo-filename {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #5a5a57;
+    margin-bottom: 8px;
+  }
+  .photo-reasoning {
+    font-size: 12px;
+    color: #2a2a28;
+    line-height: 1.55;
+  }
+  .photo-reasoning strong {
+    color: #0c2240;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .discarded {
+    background: #ffe8e8;
+    border: 1.5px solid #f5b8b8;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 18px;
+  }
+  .discarded h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #991b1b;
+    margin-bottom: 10px;
+  }
+  .discarded-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  .discarded-item {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0.55;
+    position: relative;
+  }
+  .discarded-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .discarded-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    font-size: 9px;
+    padding: 4px 6px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+
+  /* Summary */
+  .summary {
+    background: #0c2240;
+    color: white;
+    padding: 28px;
+    border-radius: 10px;
+    margin-top: 28px;
+  }
+  .summary h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.08);
+    padding: 14px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .stat strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #d4ff5b;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat span {
+    font-size: 11px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .summary p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .photo-slot {
+      grid-template-columns: 1fr;
+    }
+    .photo-slot-img {
+      max-width: 280px;
+    }
+    .summary-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Distribución final de fotos — Milos Pro v7</h1>
+    <p>Propuesta de asignación estratégica con las 11 fotos nuevas que enviaste. Cada slot tiene razonamiento del porqué esa foto funciona en ese lugar. Aprueba o ajusta antes de ejecutar.</p>
+    <div class="legend">
+      <div class="legend-item">
+        <span class="dot" style="background:#d4ff5b"></span>
+        <span>Foto NUEVA</span>
+      </div>
+      <div class="legend-item">
+        <span class="dot" style="background:#5bb8ff"></span>
+        <span>Reubicada</span>
+      </div>
+      <div class="legend-item">
+        <span class="dot" style="background:#c0c0bd"></span>
+        <span>Se mantiene</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Hero — Imagen principal</span>
+    </div>
+    <p class="section-desc">La primera impresión. Debe transmitir Miami + premium + modernidad en 2 segundos.</p>
+
+    <div class="photo-slots">
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9665.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Imagen grande del hero <span class="tag new">NUEVA</span></h4>
+          <div class="photo-filename">IMG_9665.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Casa moderna blanca de Miami con palmeras, portón negro con barras verticales y número 503 visible. Transmite credibilidad ("proyecto real entregado"), ubicación ("esto es Miami") y calidad ("trabajo refinado"). Reemplaza a IMG_9637 que aunque se veía bien parecía render 3D o stock.
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9647.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Imagen pequeña de acento <span class="tag keep">SE MANTIENE</span></h4>
+          <div class="photo-filename">IMG_9647.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Técnico de espaldas con uniforme Milos Pro visible trabajando. Perfecta porque muestra marca + acción + realidad del taller. Complementa al hero con "humanidad" después del portón de ensueño.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Servicios — 5 tarjetas</span>
+    </div>
+    <p class="section-desc">Cada tarjeta comunica un servicio específico. La foto debe hacer entender el servicio sin leer el título.</p>
+
+    <div class="photo-slots">
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9671.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Puertas automáticas <span class="tag new">NUEVA</span></h4>
+          <div class="photo-filename">IMG_9671.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Vista amplia de casa moderna con garage/portón industrial blanco y negro. Comunica "residencia moderna Miami" + "automatización integrada a arquitectura". Libera a IMG_9637 que ahora se repetía en hero y servicios.
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9669.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Cercas y rejas metálicas <span class="tag new">NUEVA</span></h4>
+          <div class="photo-filename">IMG_9669.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Cerca blanca alta con puntas ornamentales + jardín. Muestra estilo clásico/tradicional que es la otra mitad del mercado residencial Miami (no solo el black modern). Reemplaza IMG_9640 que queda mejor en otro slot.
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9661.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Soldadura a medida <span class="tag new">NUEVA</span></h4>
+          <div class="photo-filename">IMG_9661.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Portón con diseño geométrico recortado artísticamente. Es la foto PERFECTA para "soldadura a medida" porque grita "personalización" y "piezas únicas". Reemplaza a IMG_9641 (escalera) que se mueve a Instagram.
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9639.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Mantenimiento y reparación <span class="tag keep">SE MANTIENE</span></h4>
+          <div class="photo-filename">IMG_9639.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Técnico reparando motor expuesto de portón. Imagen ideal para "servicio técnico" porque muestra expertise + interior mecánico + manos a la obra. No hay que cambiarla.
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9638.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Intercomunicadores y seguridad <span class="tag keep">SE MANTIENE</span></h4>
+          <div class="photo-filename">IMG_9638.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Videoportero plateado con keypad. Matches con el servicio de forma literal y clara. Sin cambios.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Por qué Milos Pro</span>
+    </div>
+    <p class="section-desc">Sin fotos — las 4 tarjetas de diferenciadores son solo texto con números grandes. Sin cambios.</p>
+  </div>
+
+  <!-- PROCESO -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Proceso — Imagen del taller</span>
+    </div>
+    <p class="section-desc">Debe mostrar profesionalismo del taller y reforzar "sin subcontratistas".</p>
+
+    <div class="photo-slots">
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9650.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Imagen del Proceso <span class="tag move">REUBICADA</span></h4>
+          <div class="photo-filename">IMG_9650.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué cambiarla:</strong> Antes usábamos IMG_9647 aquí, pero esa la movimos al hero (imagen de acento). Esta foto (IMG_9650) muestra el taller completo con el soldador trabajando y la marca Milos Pro visible en la espalda. Refuerza "taller propio" y cumple la misma función.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Instagram — Grid de 6 fotos</span>
+    </div>
+    <p class="section-desc">Aquí podemos meter variedad. El objetivo es que se vea volumen de trabajo y diferentes tipos de proyectos.</p>
+
+    <div class="photo-slots" style="grid-template-columns: repeat(3, 1fr);">
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9641.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9641 <span class="tag move" style="font-size:9px">REUBICADA</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Escalera de caracol vista lateral</div>
+      </div>
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9651.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9651 <span class="tag keep" style="font-size:9px">SE MANTIENE</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Escalera de caracol otro ángulo</div>
+      </div>
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9637.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9637 <span class="tag move" style="font-size:9px">REUBICADA</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Portón negro sunset (antes hero)</div>
+      </div>
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9663.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9663 <span class="tag new" style="font-size:9px">NUEVA</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Portón con patrón de círculos</div>
+      </div>
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9640.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9640 <span class="tag move" style="font-size:9px">REUBICADA</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Balcón con vista a Miami</div>
+      </div>
+      <div style="background: #fafaf8; padding: 10px; border-radius: 6px; border: 1.5px solid #e0e0dd;">
+        <div class="photo-slot-img" style="aspect-ratio: 1; margin-bottom: 8px;"><img src="images/IMG_9644.webp" alt="" /></div>
+        <div style="font-size: 11px; font-family: 'Montserrat', sans-serif; color: #5a5a57;">IMG_9644 <span class="tag new" style="font-size:9px">NUEVA</span></div>
+        <div style="font-size: 11px; color: #2a2a28; margin-top: 4px;">Balcón con reja vertical moderna</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #5a5a57; margin-top: 14px; padding: 12px; background: #f7f7f6; border-radius: 4px;">
+      <strong style="font-family: 'Montserrat', sans-serif; color: #0c2240;">Lógica del grid:</strong> mezclo proyectos residenciales terminados (portones, balcones) con trabajos artísticos (escaleras, diseños recortados). Da la sensación de volumen y variedad, que es lo que un visitante espera ver en un feed de Instagram.
+    </p>
+  </div>
+
+  <!-- CTA FONDO -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">CTA Final — Imagen de fondo</span>
+    </div>
+    <p class="section-desc">El fondo del CTA final lleva overlay oscuro. Debe ser una imagen con textura dramática.</p>
+
+    <div class="photo-slots">
+      <div class="photo-slot">
+        <div class="photo-slot-img"><img src="images/IMG_9645.webp" alt="" /></div>
+        <div class="photo-slot-info">
+          <h4>Fondo del CTA <span class="tag keep">SE MANTIENE</span></h4>
+          <div class="photo-filename">IMG_9645.webp</div>
+          <div class="photo-reasoning">
+            <strong>Por qué:</strong> Soldadura con chispas, oscura y con puntos de luz. Perfecta para fondo con overlay porque las chispas brillan a través del degradado navy/teal. Sin cambios.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESCARTADAS -->
+  <div class="section-card">
+    <div class="discarded">
+      <h4>❌ Fotos que descarto (y por qué)</h4>
+      <div class="discarded-grid">
+        <div class="discarded-item">
+          <img src="images/IMG_9653.webp" alt="" />
+          <div class="discarded-label">9653 · Madera rústica</div>
+        </div>
+        <div class="discarded-item">
+          <img src="images/IMG_9664.webp" alt="" />
+          <div class="discarded-label">9664 · Reja europea + perro</div>
+        </div>
+        <div class="discarded-item">
+          <img src="images/IMG_9662.webp" alt="" />
+          <div class="discarded-label">9662 · Casa Ibiza</div>
+        </div>
+        <div class="discarded-item">
+          <img src="images/IMG_9670.webp" alt="" />
+          <div class="discarded-label">9670 · Portón rústico</div>
+        </div>
+        <div class="discarded-item">
+          <img src="images/IMG_9652.webp" alt="" />
+          <div class="discarded-label">9652 · Casa industrial</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #5a5a57; margin-top: 14px; line-height: 1.6;">
+        <strong style="font-family: 'Montserrat', sans-serif; color: #991b1b;">Razón:</strong> Estas 5 fotos, aunque son válidas, rompen la identidad visual "Miami contemporáneo" que construimos. Las rústicas/europeas son estéticamente bellas pero confunden al visitante sobre qué tipo de trabajo hace Milos (que es alto gama residencial y comercial moderno). Si Milos quiere, las puede subir a Instagram — ahí sí aportan variedad sin contaminar el mensaje del sitio. IMG_9652 queda descartada porque la composición muy lejana le resta impacto en el formato del sitio.
+      </p>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <h3>📊 Resumen de cambios</h3>
+    <div class="summary-stats">
+      <div class="stat">
+        <strong>6</strong>
+        <span>Fotos nuevas integradas</span>
+      </div>
+      <div class="stat">
+        <strong>3</strong>
+        <span>Fotos reubicadas</span>
+      </div>
+      <div class="stat">
+        <strong>4</strong>
+        <span>Fotos que se mantienen</span>
+      </div>
+      <div class="stat">
+        <strong>5</strong>
+        <span>Fotos descartadas</span>
+      </div>
+    </div>
+    <p>
+      <strong>Resultado:</strong> Cero repeticiones en el sitio. Cada slot tiene una foto específica, coherente con su sección, y pensada para comunicar algo concreto al visitante. La variedad visual aumenta sin perder coherencia de marca.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
