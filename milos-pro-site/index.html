@@ -16,11 +16,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-<!-- ============================================
-     TRACKING PLACEHOLDERS
-     ============================================
-     Cuando estén creadas las cuentas, reemplazar
-     los XXXXX por los IDs reales y descomentar.
 
 <!-- Meta Pixel
 <script>
@@ -32,7 +27,6 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '945744081709935');
 fbq('track', 'PageView');
 </script>
--->
 
 <!-- Google Analytics 4
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -42,14 +36,12 @@ fbq('track', 'PageView');
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
 </script>
--->
 
 <!-- HubSpot Tracking -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/245985891.js"></script>
 
 <!-- HubSpot Forms -->
 <script src="https://js-na2.hsforms.net/forms/embed/245985891.js" defer></script>
-============================================ -->
 
 <style>
   :root {
@@ -2731,7 +2723,7 @@ fbq('track', 'PageView');
       console.log('Exit lead capturado:', { email, source: 'exit-intent' });
 
       // TRACKING POINT
-      // fbq('track', 'Lead', { content_name: 'exit-intent-pdf' });
+       fbq('track', 'Lead', { content_name: 'exit-intent-pdf' });
 
       // Mostrar success
       exitModalContent.classList.add('success-state');
@@ -2747,9 +2739,9 @@ fbq('track', 'PageView');
      ============================================
      Cuando estén creadas las cuentas, reemplazar los IDs
      y descomentar los bloques de tracking arriba.
-     - Meta Pixel ID: PENDIENTE
+     - Meta Pixel ID: 945744081709935
      - GA4 Measurement ID: PENDIENTE
-     - HubSpot Portal ID: PENDIENTE
+     - HubSpot Portal ID: 245985891
   ============================================ */
 </script>
 
