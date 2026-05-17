@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c2240" />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <title>Milos Pro — Custom Gates, Fences &amp; Automation | South Florida</title>
+  <meta name="description" content="Custom welding and automated gates in South Florida. Free on-site estimates. Fences, railings, stairs & metal fabrication. Contact us on WhatsApp." />
+
+  <meta property="og:title" content="Milos Pro — Custom Gates &amp; Automation" />
+  <meta property="og:description" content="Custom welding and automated gates in South Florida. Free on-site estimates on WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/hero-modern-gate-night.webp" />
+
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/milos-logo-96.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/images/milos-logo-192.png" />
+
+  <link rel="preload" as="image" href="/images/hero-modern-gate-night.webp" fetchpriority="high" />
+
+  <!-- Official Milos Pro brand fonts: Montserrat (headings) + Roboto (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- ============ META PIXEL ============ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '945744081709935');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=945744081709935&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- ============ GOOGLE ANALYTICS 4 ============ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9F3ZSRJBF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9F3ZSRJBF');
+  </script>
+
+  <style>
+    /* ============ RESET ============ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      background: var(--ivory);
+      color: var(--navy);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    /* ============ BRAND TOKENS ============ */
+    :root {
+      --navy: #0c2240;
+      --navy-2: #0a1c34;
+      --navy-3: #051527;
+      --teal: #008080;
+      --teal-2: #006666;
+      --orange: #cc5500;
+      --orange-2: #b34a00;
+      --ivory: #f4f3f1;
+      --ivory-2: #ebe9e4;
+      --ivory-3: #d9d6cf;
+
+      --ink-on-light: #0c2240;
+      --ink-on-light-dim: #4a5670;
+      --ink-on-light-mute: #7a8395;
+
+      --ink-on-dark: #f4f3f1;
+      --ink-on-dark-dim: #b6bdcc;
+      --ink-on-dark-mute: #7b8499;
+
+      --line-light: rgba(12, 34, 64, 0.10);
+      --line-light-2: rgba(12, 34, 64, 0.18);
+      --line-dark: rgba(244, 243, 241, 0.10);
+      --line-dark-2: rgba(244, 243, 241, 0.18);
+
+      --whatsapp: #25d366;
+      --whatsapp-2: #128c7e;
+
+      --max: 1240px;
+      --pad: clamp(1.25rem, 4vw, 2.5rem);
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 22px;
+
+      --font-display: 'Montserrat', 'Helvetica Neue', sans-serif;
+      --font-body: 'Roboto', system-ui, sans-serif;
+    }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+
+    /* ============ NAV ============ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      background: rgba(12, 34, 64, 0.92);
+      border-bottom: 1px solid rgba(244, 243, 241, 0.08);
+      transition: transform 0.4s ease;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-block: 0.7rem;
+      gap: 1rem;
+    }
+    .logo { display: flex; align-items: center; gap: 0.65rem; color: var(--ivory); }
+    .logo-mark { width: 38px; height: 38px; flex-shrink: 0; }
+    .logo-mark img { width: 100%; height: 100%; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .logo-text strong {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .logo-text small {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-dim);
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
+    .lang-toggle {
+      display: flex;
+      border: 1px solid var(--line-dark-2);
+      border-radius: 999px;
+      padding: 3px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      font-family: var(--font-display);
+    }
+    .lang-toggle button {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      color: var(--ink-on-dark-dim);
+      letter-spacing: 0.05em;
+      transition: all 0.25s;
+    }
+    .lang-toggle button.active { background: var(--ivory); color: var(--navy); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 0.95rem;
+      background: var(--whatsapp);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      font-family: var(--font-display);
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+    .nav-cta svg { width: 15px; height: 15px; }
+    .nav-cta-label { display: none; }
+    @media (min-width: 560px) { .nav-cta-label { display: inline; } }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: 5rem;
+      padding-bottom: clamp(2.5rem, 6vw, 4rem);
+      overflow: hidden;
+      isolation: isolate;
+      color: var(--ivory);
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: -2; }
+    .hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.05);
+      animation: slowZoom 22s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+    .hero-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 34, 64, 0.55) 0%, rgba(12, 34, 64, 0.35) 40%, rgba(12, 34, 64, 0.85) 75%, var(--navy) 100%),
+        linear-gradient(90deg, rgba(12, 34, 64, 0.55) 0%, transparent 55%);
+    }
+    .hero-inner { position: relative; z-index: 2; width: 100%; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-dim);
+      margin-bottom: 1.5rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--line-dark-2);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      background: rgba(12, 34, 64, 0.4);
+    }
+    .eyebrow::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 12px var(--orange);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+    h1.hero-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2.4rem, 6.8vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -0.025em;
+      max-width: 18ch;
+      margin-bottom: 1.5rem;
+      color: var(--ivory);
+    }
+    h1.hero-title em { font-style: italic; font-weight: 400; color: var(--orange); }
+    .hero-sub {
+      max-width: 52ch;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: var(--ink-on-dark-dim);
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      padding: 1.05rem 1.6rem;
+      background: var(--whatsapp);
+      color: #fff;
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.005em;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+      transition: transform 0.25s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-whatsapp::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.7s;
+    }
+    .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(37, 211, 102, 0.5); }
+    .btn-whatsapp:hover::before { transform: translateX(100%); }
+    .btn-whatsapp svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 1.05rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--line-dark-2);
+      background: rgba(244, 243, 241, 0.06);
+      color: var(--ivory);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+    .btn-call:hover { background: rgba(244, 243, 241, 0.12); }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem 2.2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line-dark);
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
+    .hero-meta-item strong {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: var(--ivory);
+      font-style: italic;
+    }
+    .hero-meta-item span {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-mute);
+      font-weight: 500;
+    }
+
+    .scroll-hint {
+      position: absolute; left: 50%; bottom: 1.5rem;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-mute);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      animation: bob 2.6s ease-in-out infinite;
+      z-index: 2;
+    }
+    .scroll-hint::after {
+      content: ""; width: 1px; height: 28px;
+      background: linear-gradient(to bottom, var(--ink-on-dark-mute), transparent);
+    }
+    @keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
+    @media (max-width: 640px) { .scroll-hint { display: none; } }
+
+    /* ============ SECTION STRUCTURE ============ */
+    section { padding-block: clamp(4rem, 8vw, 7rem); position: relative; }
+
+    .sec-light { background: var(--ivory); color: var(--navy); }
+    .sec-light-2 { background: var(--ivory-2); color: var(--navy); }
+    .sec-dark { background: var(--navy); color: var(--ivory); }
+    .sec-dark-2 { background: var(--navy-2); color: var(--ivory); }
+
+    .section-head { margin-bottom: 3rem; max-width: 720px; }
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    h2.section-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+    h2.section-title em { font-style: italic; color: var(--orange); font-weight: 400; }
+    .sec-light h2.section-title, .sec-light-2 h2.section-title { color: var(--navy); }
+    .sec-dark h2.section-title, .sec-dark-2 h2.section-title { color: var(--ivory); }
+
+    .section-lead { font-size: 1.05rem; max-width: 58ch; font-weight: 400; }
+    .sec-light .section-lead, .sec-light-2 .section-lead { color: var(--ink-on-light-dim); }
+    .sec-dark .section-lead, .sec-dark-2 .section-lead { color: var(--ink-on-dark-dim); }
+
+    /* ============ SERVICES ============ */
+    .services {
+      background:
+        radial-gradient(60% 60% at 20% 0%, rgba(0, 128, 128, 0.05) 0%, transparent 60%),
+        var(--ivory);
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--line-light);
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+    }
+    .service-card {
+      background: var(--ivory);
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column;
+      gap: 1rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover { background: var(--ivory-2); }
+    .service-card .icon {
+      width: 46px; height: 46px;
+      display: grid; place-items: center;
+      border: 1px solid var(--line-light-2);
+      border-radius: 12px;
+      color: var(--teal);
+      background: rgba(0, 128, 128, 0.04);
+    }
+    .service-card .icon svg { width: 22px; height: 22px; }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+    }
+    .service-card p { color: var(--ink-on-light-dim); font-size: 0.95rem; line-height: 1.6; }
+    .service-card .num {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--orange);
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    /* ============ SHOWCASE / SPLIT ============ */
+    .showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+    @media (min-width: 900px) { .showcase { grid-template-columns: 1.05fr 1fr; } }
+    .showcase.reverse { direction: rtl; }
+    .showcase.reverse > * { direction: ltr; }
+    .showcase-img {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--line-light);
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+    .sec-dark .showcase-img, .sec-dark-2 .showcase-img, .automation-section .showcase-img { border-color: var(--line-dark); }
+    .showcase-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+    .showcase-img:hover img { transform: scale(1.04); }
+    .showcase-img .tag {
+      position: absolute; left: 1rem; bottom: 1rem;
+      padding: 0.45rem 0.85rem;
+      background: rgba(12, 34, 64, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line-dark-2);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      font-weight: 500;
+    }
+
+    .why-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+    .why-item {
+      display: flex; gap: 1.1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .sec-dark .why-item, .sec-dark-2 .why-item { border-bottom-color: var(--line-dark); }
+    .why-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .why-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--orange);
+      font-weight: 500;
+      flex-shrink: 0;
+      width: 28px;
+    }
+    .why-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+    .sec-light .why-content h4, .sec-light-2 .why-content h4 { color: var(--navy); }
+    .sec-dark .why-content h4, .sec-dark-2 .why-content h4 { color: var(--ivory); }
+    .why-content p { font-size: 0.95rem; }
+    .sec-light .why-content p, .sec-light-2 .why-content p { color: var(--ink-on-light-dim); }
+    .sec-dark .why-content p, .sec-dark-2 .why-content p { color: var(--ink-on-dark-dim); }
+
+    /* ============ GALLERY ============ */
+    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.75rem; }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r-md);
+      border: 1px solid var(--line-light);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s ease, filter 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1.08); }
+    .gallery-item.tall { grid-column: span 4; aspect-ratio: 3/4; }
+    .gallery-item.wide { grid-column: span 8; aspect-ratio: 3/2; }
+    .gallery-item.square { grid-column: span 4; aspect-ratio: 1; }
+    .gallery-item.medium { grid-column: span 6; aspect-ratio: 4/3; }
+    @media (max-width: 760px) {
+      .gallery-item.tall, .gallery-item.wide, .gallery-item.square, .gallery-item.medium {
+        grid-column: span 12;
+        aspect-ratio: 4/3;
+      }
+    }
+
+    /* ============ PROCESS ============ */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .process-step {
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--line-light);
+      border-radius: var(--r-md);
+      background: var(--ivory);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .process-step:hover {
+      border-color: var(--teal);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(12, 34, 64, 0.07);
+    }
+    .process-step .step-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+    .process-step h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--navy);
+    }
+    .process-step p { color: var(--ink-on-light-dim); font-size: 0.92rem; }
+
+    /* ============ AUTOMATION (dark with proper contrast) ============ */
+    .automation-section {
+      background:
+        radial-gradient(120% 80% at 0% 50%, rgba(0, 128, 128, 0.12) 0%, transparent 60%),
+        radial-gradient(80% 60% at 100% 50%, rgba(204, 85, 0, 0.06) 0%, transparent 60%),
+        var(--navy);
+      color: var(--ivory);
+    }
+    .automation-section .section-eyebrow { color: var(--orange); }
+    .automation-section h2.section-title { color: var(--ivory); }
+    .automation-section h2.section-title em { color: var(--orange); }
+    .automation-section .section-lead { color: var(--ink-on-dark-dim); }
+
+    /* ============ SERVICE AREA ============ */
+    .area-section {
+      background:
+        radial-gradient(80% 60% at 50% 0%, rgba(204, 85, 0, 0.06) 0%, transparent 60%),
+        var(--navy);
+      color: var(--ivory);
+    }
+    .area-section .section-head { text-align: center; margin-inline: auto; }
+    .area-section h2.section-title { color: var(--ivory); }
+    .area-section .section-lead { color: var(--ink-on-dark-dim); margin-inline: auto; }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+    @media (min-width: 680px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .area-grid { grid-template-columns: repeat(3, 1fr); } }
+    .area-tag {
+      padding: 1.05rem 1.3rem;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--r-sm);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex; align-items: center; gap: 0.65rem;
+      transition: all 0.25s;
+      background: rgba(244, 243, 241, 0.02);
+      color: var(--ivory);
+    }
+    .area-tag:hover {
+      border-color: var(--orange);
+      background: rgba(204, 85, 0, 0.08);
+    }
+    .area-tag svg { width: 16px; height: 16px; color: var(--orange); flex-shrink: 0; }
+    .area-note {
+      text-align: center;
+      margin-top: 1.75rem;
+      color: var(--ink-on-dark-mute);
+      font-size: 0.9rem;
+    }
+
+    /* ============ FINAL CTA ============ */
+    .final-cta {
+      background:
+        radial-gradient(80% 60% at 50% 50%, rgba(0, 128, 128, 0.14) 0%, transparent 70%),
+        var(--navy-2);
+      color: var(--ivory);
+      text-align: center;
+      padding-block: clamp(5rem, 10vw, 8rem);
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .final-cta::before, .final-cta::after {
+      content: ""; position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.18;
+    }
+    .final-cta::before { background: var(--teal); top: -220px; left: -200px; }
+    .final-cta::after { background: var(--orange); bottom: -220px; right: -200px; }
+    .final-cta > * { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.2rem;
+      max-width: 18ch;
+      margin-inline: auto;
+      color: var(--ivory);
+    }
+    .final-cta h2 em { font-style: italic; color: var(--orange); font-weight: 400; }
+    .final-cta p {
+      color: var(--ink-on-dark-dim);
+      font-size: 1.1rem;
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+    }
+    .trust-row {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      color: var(--ink-on-dark-mute);
+      font-weight: 500;
+    }
+    .trust-row > span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .trust-row svg { width: 14px; height: 14px; color: var(--teal); flex-shrink: 0; }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding-block: 3rem;
+      border-top: 1px solid var(--line-dark);
+      background: var(--navy-3);
+      color: var(--ink-on-dark-dim);
+    }
+    .footer-inner {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .footer-meta { display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; }
+    .footer-meta a { color: var(--ivory); transition: color 0.2s; }
+    .footer-meta a:hover { color: var(--orange); }
+    .footer-social { display: flex; gap: 0.6rem; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border: 1px solid var(--line-dark-2);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      transition: all 0.25s;
+      color: var(--ivory);
+    }
+    .footer-social a:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .footer-social svg { width: 16px; height: 16px; }
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line-dark);
+      font-size: 0.78rem;
+      color: var(--ink-on-dark-mute);
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    /* ============ FLOATING WHATSAPP ============ */
+    .floating-wa {
+      position: fixed;
+      bottom: 1.25rem; right: 1.25rem;
+      z-index: 60;
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.9rem 1.2rem;
+      background: var(--whatsapp);
+      color: #fff;
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.92rem;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.25s, box-shadow 0.3s, opacity 0.4s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .floating-wa.visible { opacity: 1; transform: translateY(0); }
+    .floating-wa:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(37, 211, 102, 0.6), 0 2px 8px rgba(0,0,0,0.3); }
+    .floating-wa svg { width: 22px; height: 22px; }
+    .floating-wa::after {
+      content: ""; position: absolute; inset: -4px;
+      border: 2px solid var(--whatsapp);
+      border-radius: 999px;
+      opacity: 0.5;
+      animation: ripple 2.4s ease-out infinite;
+    }
+    @keyframes ripple { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.18); opacity: 0; } }
+
+    /* ============ REVEAL ON SCROLL ============ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============ LANG UTILITIES ============ */
+    [data-lang-en], [data-lang-es] { display: none; }
+    html[lang="en"] [data-lang-en] { display: inline; }
+    html[lang="es"] [data-lang-es] { display: inline; }
+    html[lang="en"] [data-lang-en-block] { display: block; }
+    html[lang="es"] [data-lang-es-block] { display: block; }
+    [data-lang-en-block], [data-lang-es-block] { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="logo" aria-label="Milos Pro home">
+        <div class="logo-mark">
+          <img src="/images/milos-logo.webp" alt="Milos Pro" width="38" height="38" />
+        </div>
+        <div class="logo-text">
+          <strong>Milos Pro</strong>
+          <small>Welding &amp; Gates</small>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-set-lang="en">EN</button>
+          <button type="button" data-set-lang="es">ES</button>
+        </div>
+        <a href="#" class="nav-cta" data-wa-link data-wa-msg-en="Hi Milos Pro, I'd like a free estimate." data-wa-msg-es="Hola Milos Pro, quisiera una cotización gratis.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="nav-cta-label">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 800px)" srcset="/images/hero-modern-gate-night-sm.webp" />
+        <img src="/images/hero-modern-gate-night.webp" alt="" loading="eager" fetchpriority="high" />
+      </picture>
+    </div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">
+        <span data-lang-en>Custom Welding &amp; Automated Gates · South Florida</span>
+        <span data-lang-es>Soldadura Artesanal y Portones Automatizados · Sur de Florida</span>
+      </span>
+      <h1 class="hero-title">
+        <span data-lang-en-block>Gates, fences &amp; metalwork <em>built to last.</em></span>
+        <span data-lang-es-block>Portones, rejas y metalistería <em>hechos para durar.</em></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang-en>Custom design, professional welding and full automation. Free on-site visits across South Florida — we usually reply on WhatsApp within minutes.</span>
+        <span data-lang-es>Diseño a medida, soldadura profesional y automatización completa. Visitas gratis en sitio en todo el Sur de Florida — solemos responder por WhatsApp en minutos.</span>
+      </p>
+      <div class="hero-cta-row">
+        <a href="#" class="btn-whatsapp" data-wa-link data-wa-msg-en="Hi Milos Pro, I'd like a free on-site estimate for a gate / fence project." data-wa-msg-es="Hola Milos Pro, quisiera una visita gratis para cotizar un proyecto de portón / reja.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span data-lang-en>Get free estimate on WhatsApp</span>
+          <span data-lang-es>Cotización gratis por WhatsApp</span>
+        </a>
+        <a href="tel:+13054644730" class="btn-call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px;">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +1 305-464-4730
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <strong data-lang-en>Reply in minutes</strong>
+          <strong data-lang-es>Respuesta inmediata</strong>
+          <span data-lang-en>On WhatsApp</span>
+          <span data-lang-es>Por WhatsApp</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>10+</strong>
+          <span data-lang-en>Years experience</span>
+          <span data-lang-es>Años de experiencia</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong data-lang-en>Free visit</strong>
+          <strong data-lang-es>Visita gratis</strong>
+          <span data-lang-en>On-site, no obligation</span>
+          <span data-lang-es>En sitio, sin compromiso</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span data-lang-en>Scroll</span>
+      <span data-lang-es>Desliza</span>
+    </div>
+  </header>
+
+  <!-- ========== SERVICES (light) ========== -->
+  <section class="services sec-light" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">
+          <span data-lang-en>What we build</span>
+          <span data-lang-es>Lo que hacemos</span>
+        </span>
+        <h2 class="section-title">
+          <span data-lang-en-block>One workshop. <em>Every</em> metal project.</span>
+          <span data-lang-es-block>Un taller. <em>Cada</em> proyecto en metal.</span>
+        </h2>
+        <p class="section-lead">
+          <span data-lang-en>From custom driveway gates to ornamental fences, automation, railings and full metal fabrication — designed, welded and installed by the same team.</span>
+          <span data-lang-es>Desde portones a medida hasta rejas ornamentales, automatización, barandales y fabricación metálica completa — diseñados, soldados e instalados por el mismo equipo.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="service-grid reveal">
+      <article class="service-card">
+        <span class="num">01</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M7 6v14M12 6v14M17 6v14M3 13h18"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Custom gates</span>
+          <span data-lang-es>Portones a medida</span>
+        </h3>
+        <p>
+          <span data-lang-en>Driveway, pedestrian, sliding and swing gates. Modern slat, ornamental or wood-look composite — designed to match your property.</span>
+          <span data-lang-es>Portones de acceso, peatonales, corredizos y abatibles. Modernos de listones, ornamentales o tipo madera — diseñados para tu propiedad.</span>
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="num">02</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16M8 4v16M12 4v16M16 4v16M20 4v16M2 10h20M2 16h20"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Fences &amp; railings</span>
+          <span data-lang-es>Rejas y barandales</span>
+        </h3>
+        <p>
+          <span data-lang-en>Aluminum and steel fencing for residential and commercial perimeters. Pool, balcony and stair railings code-compliant for South Florida.</span>
+          <span data-lang-es>Cercas de aluminio y acero para residencias y comercios. Barandales de piscina, balcón y escaleras conforme al código de Florida.</span>
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="num">03</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Gate automation</span>
+          <span data-lang-es>Automatización</span>
+        </h3>
+        <p>
+          <span data-lang-en>LiftMaster motors, keypads, intercoms, smartphone control and safety sensors. Installed, programmed and serviced in-house.</span>
+          <span data-lang-es>Motores LiftMaster, teclados, intercomunicadores, control desde el móvil y sensores de seguridad. Instalados y programados por nosotros.</span>
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="num">04</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l4-4 4 4 4-8 6 6"/><path d="M3 20h18"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Stairs &amp; structural</span>
+          <span data-lang-es>Escaleras y estructuras</span>
+        </h3>
+        <p>
+          <span data-lang-en>Interior spiral stairs, exterior fire escapes, mezzanines and structural steel. Custom-engineered, permit-ready fabrication.</span>
+          <span data-lang-es>Escaleras caracol interiores, escaleras exteriores, mezanines y acero estructural. Fabricación a medida, lista para permisos.</span>
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="num">05</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16M15 4v16M4 9h16M4 15h16"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Privacy screens</span>
+          <span data-lang-es>Paneles de privacidad</span>
+        </h3>
+        <p>
+          <span data-lang-en>AC enclosures, pool equipment screens and architectural privacy walls. Built to integrate with the home, not disappear behind it.</span>
+          <span data-lang-es>Cubiertas para aires acondicionados, equipos de piscina y muros decorativos. Pensados para integrarse a la arquitectura.</span>
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="num">06</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>
+          <span data-lang-en>Repair &amp; service</span>
+          <span data-lang-es>Reparación y servicio</span>
+        </h3>
+        <p>
+          <span data-lang-en>Existing gate not closing? Motor failing? Hinge rusted out? We diagnose, repair and modernize systems we didn't originally install.</span>
+          <span data-lang-es>¿Tu portón no cierra? ¿Falla el motor? ¿Bisagras oxidadas? Diagnosticamos y modernizamos sistemas instalados por terceros.</span>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== WHY US (dark) ========== -->
+  <section class="sec-dark" id="why">
+    <div class="wrap">
+      <div class="showcase">
+        <div class="showcase-img reveal">
+          <img src="/images/milos-welder-action.webp" alt="Milos Pro welder fabricating a custom gate in the workshop" loading="lazy" />
+          <span class="tag">
+            <span data-lang-en>Our workshop</span>
+            <span data-lang-es>Nuestro taller</span>
+          </span>
+        </div>
+
+        <div class="reveal">
+          <span class="section-eyebrow">
+            <span data-lang-en>Why Milos Pro</span>
+            <span data-lang-es>Por qué Milos Pro</span>
+          </span>
+          <h2 class="section-title">
+            <span data-lang-en-block>Built in-house. <em>No middlemen.</em></span>
+            <span data-lang-es-block>Hecho en casa. <em>Sin intermediarios.</em></span>
+          </h2>
+
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-num">01</div>
+              <div class="why-content">
+                <h4>
+                  <span data-lang-en>One team, end to end</span>
+                  <span data-lang-es>Un equipo, de principio a fin</span>
+                </h4>
+                <p>
+                  <span data-lang-en>The person who measures your project is the same one who welds, paints and installs it. Faster, cleaner, accountable.</span>
+                  <span data-lang-es>Quien mide tu proyecto es quien lo suelda, pinta e instala. Más rápido, más limpio, más responsable.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <div class="why-num">02</div>
+              <div class="why-content">
+                <h4>
+                  <span data-lang-en>Real custom design</span>
+                  <span data-lang-es>Diseño realmente a medida</span>
+                </h4>
+                <p>
+                  <span data-lang-en>No pre-cut catalog parts. We design and fabricate to fit your opening, your home's style and your budget.</span>
+                  <span data-lang-es>Sin piezas de catálogo prearmadas. Diseñamos y fabricamos a la medida de tu acceso, tu casa y tu presupuesto.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <div class="why-num">03</div>
+              <div class="why-content">
+                <h4>
+                  <span data-lang-en>South Florida ready</span>
+                  <span data-lang-es>Hecho para el Sur de Florida</span>
+                </h4>
+                <p>
+                  <span data-lang-en>Materials, coatings and hardware chosen specifically for salt air, humidity and hurricane season — not generic spec.</span>
+                  <span data-lang-es>Materiales, recubrimientos y herrajes elegidos específicamente para el aire salino, la humedad y la temporada de huracanes.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <div class="why-num">04</div>
+              <div class="why-content">
+                <h4>
+                  <span data-lang-en>Clear communication</span>
+                  <span data-lang-es>Comunicación clara</span>
+                </h4>
+                <p>
+                  <span data-lang-en>WhatsApp first, on-site visit to evaluate, drawings before fabrication and photos as we build. You always know what stage you're in.</span>
+                  <span data-lang-es>Primero WhatsApp, visita al sitio para evaluar, planos antes de fabricar y fotos durante el proceso. Siempre sabes en qué etapa estás.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY (light-2) ========== -->
+  <section class="sec-light-2" id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">
+          <span data-lang-en>Recent work</span>
+          <span data-lang-es>Trabajos recientes</span>
+        </span>
+        <h2 class="section-title">
+          <span data-lang-en-block>Projects across <em>South Florida.</em></span>
+          <span data-lang-es-block>Proyectos por todo el <em>Sur de Florida.</em></span>
+        </h2>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item wide">
+          <img src="/images/modern-house-gate.webp" alt="Modern luxury home with custom black slat gate at twilight" loading="lazy" />
+        </div>
+        <div class="gallery-item square">
+          <img src="/images/ornamental-fence-detail.webp" alt="Detail of ornamental black metal fence with fleur-de-lis finials" loading="lazy" />
+        </div>
+        <div class="gallery-item square">
+          <img src="/images/automated-sliding-gate.webp" alt="Automated sliding gate with LiftMaster motor and keypad" loading="lazy" />
+        </div>
+        <div class="gallery-item medium">
+          <img src="/images/ornamental-fence-sunset.webp" alt="Ornamental fence at sunset in residential property" loading="lazy" />
+        </div>
+        <div class="gallery-item medium">
+          <img src="/images/modern-horizontal-gate.webp" alt="Modern black horizontal slat sliding gate" loading="lazy" />
+        </div>
+        <div class="gallery-item tall">
+          <img src="/images/exterior-spiral-stairs.webp" alt="Custom exterior black spiral staircase" loading="lazy" />
+        </div>
+        <div class="gallery-item tall">
+          <img src="/images/interior-spiral-stairs.webp" alt="Interior wood and glass spiral staircase" loading="lazy" />
+        </div>
+        <div class="gallery-item tall">
+          <img src="/images/ac-unit-enclosure.webp" alt="Modern black slat enclosure for air conditioning unit" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AUTOMATION (dark, contrast-safe) ========== -->
+  <section class="automation-section">
+    <div class="wrap">
+      <div class="showcase reverse">
+        <div class="showcase-img reveal">
+          <img src="/images/automated-sliding-gate.webp" alt="Automated sliding gate with LiftMaster operator and keypad access" loading="lazy" />
+          <span class="tag">
+            <span data-lang-en>Automation</span>
+            <span data-lang-es>Automatización</span>
+          </span>
+        </div>
+        <div class="reveal">
+          <span class="section-eyebrow">
+            <span data-lang-en>Smart access</span>
+            <span data-lang-es>Acceso inteligente</span>
+          </span>
+          <h2 class="section-title">
+            <span data-lang-en-block>Open your gate <em>from anywhere.</em></span>
+            <span data-lang-es-block>Abre tu portón <em>desde cualquier lugar.</em></span>
+          </h2>
+          <p class="section-lead">
+            <span data-lang-en>We install and program LiftMaster motors, smartphone controllers, keypads, intercoms, vehicle sensors and safety photo eyes. New installs and retrofits.</span>
+            <span data-lang-es>Instalamos y programamos motores LiftMaster, control desde el móvil, teclados, intercomunicadores, sensores vehiculares y ojos fotoeléctricos. Instalaciones nuevas y retrofits.</span>
+          </p>
+          <a href="#" class="btn-whatsapp" style="margin-top: 2rem;" data-wa-link data-wa-msg-en="Hi Milos Pro, I'd like to ask about gate automation." data-wa-msg-es="Hola Milos Pro, quisiera consultar sobre automatización de portones.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span data-lang-en>Ask about automation</span>
+            <span data-lang-es>Consultar automatización</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS (light) ========== -->
+  <section class="sec-light" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">
+          <span data-lang-en>How it works</span>
+          <span data-lang-es>Cómo trabajamos</span>
+        </span>
+        <h2 class="section-title">
+          <span data-lang-en-block>Simple process, <em>no surprises.</em></span>
+          <span data-lang-es-block>Proceso simple, <em>sin sorpresas.</em></span>
+        </h2>
+      </div>
+
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h4>
+            <span data-lang-en>WhatsApp us</span>
+            <span data-lang-es>Escríbenos</span>
+          </h4>
+          <p>
+            <span data-lang-en>Tell us briefly what you're looking for and where it is. We reply the same day and schedule a free on-site visit.</span>
+            <span data-lang-es>Cuéntanos brevemente qué buscas y dónde está. Respondemos el mismo día y agendamos una visita gratis en sitio.</span>
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h4>
+            <span data-lang-en>Free on-site visit</span>
+            <span data-lang-es>Visita gratis en sitio</span>
+          </h4>
+          <p>
+            <span data-lang-en>We go to the property, evaluate the space and conditions in person, discuss materials and finishes, and give you a written estimate. No obligation.</span>
+            <span data-lang-es>Vamos a la propiedad, evaluamos el espacio y las condiciones en persona, conversamos materiales y acabados, y te entregamos cotización por escrito. Sin compromiso.</span>
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h4>
+            <span data-lang-en>Design &amp; build</span>
+            <span data-lang-es>Diseño y fabricación</span>
+          </h4>
+          <p>
+            <span data-lang-en>You approve the drawings. We fabricate in our workshop, send progress photos, and schedule install.</span>
+            <span data-lang-es>Apruebas los planos. Fabricamos en taller, te enviamos fotos del avance y coordinamos instalación.</span>
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h4>
+            <span data-lang-en>Install &amp; warranty</span>
+            <span data-lang-es>Instalación y garantía</span>
+          </h4>
+          <p>
+            <span data-lang-en>Clean installation, system programming, walk-through and warranty. We're here for the long run.</span>
+            <span data-lang-es>Instalación limpia, programación del sistema, recorrido final y garantía. Estamos aquí a largo plazo.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE AREA (dark) ========== -->
+  <section class="area-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">
+          <span data-lang-en>Service area</span>
+          <span data-lang-es>Zona de servicio</span>
+        </span>
+        <h2 class="section-title">
+          <span data-lang-en-block>All across <em>South Florida.</em></span>
+          <span data-lang-es-block>En todo el <em>Sur de Florida.</em></span>
+        </h2>
+        <p class="section-lead">
+          <span data-lang-en>We cover the full South Florida corridor — from the Keys all the way up to Palm Beach.</span>
+          <span data-lang-es>Cubrimos todo el corredor del Sur de Florida — desde los Cayos hasta Palm Beach.</span>
+        </p>
+      </div>
+
+      <div class="area-grid reveal">
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Miami-Dade County</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Broward County</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Palm Beach County</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Homestead</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Florida City</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Key Largo</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Marathon</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Key West</div>
+        <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-lang-en>Surrounding areas</span>
+          <span data-lang-es>Zonas aledañas</span>
+        </div>
+      </div>
+
+      <p class="area-note">
+        <span data-lang-en>Not sure if we cover your area? Message us — we probably do.</span>
+        <span data-lang-es>¿No estás seguro de si cubrimos tu zona? Escríbenos — probablemente sí.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="final-cta" id="contact">
+    <div class="wrap">
+      <h2>
+        <span data-lang-en-block>Ready for your <em>free estimate?</em></span>
+        <span data-lang-es-block>¿Listo para tu <em>cotización gratis?</em></span>
+      </h2>
+      <p>
+        <span data-lang-en>Tell us a bit about your project on WhatsApp and we'll schedule a free on-site visit to evaluate and give you a written quote.</span>
+        <span data-lang-es>Cuéntanos sobre tu proyecto por WhatsApp y agendamos una visita gratis en sitio para evaluar y entregarte una cotización por escrito.</span>
+      </p>
+
+      <a href="#" class="btn-whatsapp" data-wa-link data-wa-msg-en="Hi Milos Pro, I'm interested in a free on-site estimate." data-wa-msg-es="Hola Milos Pro, me interesa una visita gratis en sitio para cotizar." style="font-size: 1.1rem; padding: 1.2rem 2rem;">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:24px;height:24px;">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span data-lang-en>Message us on WhatsApp</span>
+        <span data-lang-es>Escríbenos por WhatsApp</span>
+      </a>
+
+      <div class="trust-row">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-lang-en>Free on-site estimates</span>
+          <span data-lang-es>Visita y cotización gratis</span>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-lang-en>Licensed &amp; insured</span>
+          <span data-lang-es>Licencia y seguro</span>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-lang-en>Reply in minutes</span>
+          <span data-lang-es>Respuesta inmediata</span>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-lang-en>English &amp; Spanish</span>
+          <span data-lang-es>Inglés y español</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-meta">
+          <a href="#" class="logo" style="margin-bottom: 0.5rem;">
+            <div class="logo-mark"><img src="/images/milos-logo.webp" alt="Milos Pro" width="38" height="38" /></div>
+            <div class="logo-text">
+              <strong>Milos Pro</strong>
+              <small>Welding &amp; Automated Gates</small>
+            </div>
+          </a>
+          <a href="tel:+13054644730">+1 305-464-4730</a>
+          <span style="color: var(--ink-on-dark-mute);">South Florida</span>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://instagram.com/milospro__" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://milosprogates.com" target="_blank" rel="noopener" aria-label="Website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+          <a href="#" data-wa-link data-wa-msg-en="Hi Milos Pro, I'd like more information." data-wa-msg-es="Hola Milos Pro, quisiera más información." aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Milos Pro. <span data-lang-en>All rights reserved.</span><span data-lang-es>Todos los derechos reservados.</span></span>
+        <span data-lang-en>Custom welding &amp; automated gates in South Florida</span>
+        <span data-lang-es>Soldadura y portones automatizados en el Sur de Florida</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="floating-wa" id="floating-wa" data-wa-link data-wa-msg-en="Hi Milos Pro, I'm interested in a free on-site estimate." data-wa-msg-es="Hola Milos Pro, me interesa una visita gratis en sitio." aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
+    </svg>
+    <span data-lang-en>Chat with us</span>
+    <span data-lang-es>Escríbenos</span>
+  </a>
+
+
+  <!-- ===================== JS ===================== -->
+  <script>
+    // Same number for both WhatsApp and phone calls.
+    const WHATSAPP_NUMBER = '13054644730';
+
+    const SUPPORTED = ['en', 'es'];
+    function detectLang() {
+      const params = new URLSearchParams(location.search);
+      const fromUrl = params.get('lang');
+      if (fromUrl && SUPPORTED.includes(fromUrl.toLowerCase())) return fromUrl.toLowerCase();
+      try {
+        const saved = localStorage.getItem('milos-lang');
+        if (saved && SUPPORTED.includes(saved)) return saved;
+      } catch (e) {}
+      const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (nav.startsWith('es')) return 'es';
+      return 'en';
+    }
+    function setLang(lang) {
+      if (!SUPPORTED.includes(lang)) lang = 'en';
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('milos-lang', lang); } catch (e) {}
+      document.querySelectorAll('[data-set-lang]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      if (lang === 'es') {
+        document.title = 'Milos Pro — Portones, Rejas y Automatización | Sur de Florida';
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.content = 'Soldadura artesanal y portones automatizados en el Sur de Florida. Visita y cotización gratis. Rejas, barandales, escaleras y fabricación metálica. Contáctanos por WhatsApp.';
+      } else {
+        document.title = 'Milos Pro — Custom Gates, Fences & Automation | South Florida';
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.content = 'Custom welding and automated gates in South Florida. Free on-site estimates. Fences, railings, stairs & metal fabrication. Contact us on WhatsApp.';
+      }
+      buildWhatsAppLinks();
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+    });
+
+    function buildWhatsAppLinks() {
+      const lang = document.documentElement.lang || 'en';
+      const params = new URLSearchParams(location.search);
+      const utmBits = [];
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'].forEach(key => {
+        const v = params.get(key);
+        if (v) utmBits.push(`${key}=${v}`);
+      });
+      const trail = utmBits.length ? `\n\n[ref: ${utmBits.join('&')}]` : '';
+
+      document.querySelectorAll('[data-wa-link]').forEach(el => {
+        const msg = el.dataset[lang === 'es' ? 'waMsgEs' : 'waMsgEn'] || 'Hi Milos Pro';
+        const text = encodeURIComponent(msg + trail);
+        el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+        el.target = '_blank';
+        el.rel = 'noopener';
+
+        // Avoid attaching duplicate listeners on re-render (language toggle)
+        if (el.dataset.tracked === '1') return;
+        el.dataset.tracked = '1';
+        el.addEventListener('click', () => {
+          // Identify where the click happened so we can compare CTA performance.
+          let location = 'unknown';
+          if (el.classList.contains('floating-wa')) location = 'floating';
+          else if (el.classList.contains('nav-cta')) location = 'nav';
+          else if (el.closest('.hero')) location = 'hero';
+          else if (el.closest('.automation-section')) location = 'automation';
+          else if (el.closest('.final-cta')) location = 'final_cta';
+          else if (el.closest('footer')) location = 'footer';
+
+          // Meta Pixel — Contact + Lead so the campaign can optimize either way.
+          try {
+            if (window.fbq) {
+              fbq('track', 'Contact', { content_name: 'whatsapp_click', source: location });
+              fbq('track', 'Lead',    { content_name: 'whatsapp_click', source: location });
+            }
+          } catch (e) {}
+
+          // Google Analytics 4
+          try {
+            if (window.gtag) {
+              gtag('event', 'whatsapp_click', {
+                event_category: 'engagement',
+                event_label: location,
+                cta_location: location,
+                language: lang
+              });
+              gtag('event', 'generate_lead', {
+                event_category: 'conversion',
+                method: 'whatsapp',
+                cta_location: location
+              });
+            }
+          } catch (e) {}
+        });
+      });
+    }
+
+    // Also track tel: clicks as a secondary contact signal.
+    document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+      el.addEventListener('click', () => {
+        try {
+          if (window.fbq) fbq('track', 'Contact', { content_name: 'phone_click' });
+          if (window.gtag) gtag('event', 'phone_click', { event_category: 'engagement', method: 'phone' });
+        } catch (e) {}
+      });
+    });
+
+    const floatingWa = document.getElementById('floating-wa');
+    function onScrollFloat() {
+      if (window.scrollY > 400) floatingWa.classList.add('visible');
+      else floatingWa.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScrollFloat, { passive: true });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    let lastY = 0;
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 200 && y > lastY) nav.style.transform = 'translateY(-100%)';
+      else nav.style.transform = 'translateY(0)';
+      lastY = y;
+    }, { passive: true });
+
+    setLang(detectLang());
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
