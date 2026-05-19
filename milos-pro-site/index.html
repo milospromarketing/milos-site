@@ -2598,8 +2598,8 @@ HubSpot Tracking
 
       // TRACKING POINT
       // Cuando esté instalado el Pixel y GA4:
-      // fbq('track', 'Lead', { content_name: formData.service });
-      // gtag('event', 'generate_lead', { service: formData.service });
+     fbq('track', 'Lead', { content_name: formData.service });
+gtag('event', 'generate_lead', { service: formData.service });
 
       // Mostrar success state
       formCard.classList.add('success-state');
