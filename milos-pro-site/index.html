@@ -2703,7 +2703,7 @@ gtag('event', 'generate_lead', { service: formData.service });
       console.log('Exit lead capturado:', { email, source: 'exit-intent' });
 
       // TRACKING POINT
-      // fbq('track', 'Lead', { content_name: 'exit-intent-pdf' });
+      fbq('track', 'Lead', { content_name: 'exit-intent-pdf' });
 
       // Mostrar success
       exitModalContent.classList.add('success-state');
@@ -2713,16 +2713,15 @@ gtag('event', 'generate_lead', { service: formData.service });
       setTimeout(hideExitModal, 3500);
     });
   }
-
-  /* ============================================
-     TRACKING — PLACEHOLDERS
-     ============================================
-     Cuando estén creadas las cuentas, reemplazar los IDs
-     y descomentar los bloques de tracking arriba.
-     - Meta Pixel ID: 945744081709935
-     - GA4 Measurement ID: G-K9F3ZSRJBF
-     - HubSpot Portal ID: 245985891
-  ============================================ */
+ 
+/* ==========================================
+   TRACKING — IDs CONFIGURADOS
+   ==========================================
+   - Meta Pixel ID: 945744081709935 ✓
+   - GA4 Measurement ID: PENDIENTE (crear cuenta GA4)
+   - HubSpot Portal ID: 245985891 ✓
+   ========================================== */
+ 
 </script>
 
 </body>
